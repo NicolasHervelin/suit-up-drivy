@@ -2,32 +2,83 @@
 <html>
   <head>
     <title>CSS/HTML Workshop with Drivy</title>
+    <meta charset="utf-8" />
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bootstrap/css/bootstrap-theme.min.css" rel="strylesheet">
+    <link href="drivy.css" rel="stylesheet">
   </head>
   <body>
-    <div id="car">
-      <input class="model" type="text" placeholder="Car model"/>
-      <input class="price-by-day" type="number" placeholder="Price by day"/>
-      <input class="price-by-km" type="number" placeholder="Price by km"/>
-    </div>
-    <div id="rental">
-      <input class="begin" type="date" placeholder="Rental begin date"/>
-      <input class="end" type="date" placeholder="Rental end date"/>
-      <input class="distance" type="number" placeholder="Distance in km"/>
-      <input class="option" type="checkbox" placeholder="Deductible option"/>
-    </div>
-    <button id="compute">Compute</button>
-    <div id="actors"></div>
-    <script id="template" type="x-tmpl-mustache">
-      {{#actors}}
-        <div class="actor">
-          <span>{{who}}</span>
-          <span>{{type}}</span>
-          <span>{{amount}}</span>
+    <img src="Bandeau.png" class="bandeau"/>
+    <center>
+      <div class="centerBlock1">
+        <div id="car">
+          <label class="subtitle">Car information</label>
+          <div class="centerBlock2">
+            <div class="form-group">
+              <label>Car model</label>
+              <input class="model" type="text" placeholder="Model"/>
+            </div>
+            <div class="form-group">
+              <label>Price by day</label>
+              <input class="price-by-day" type="number" placeholder="Price by day"/>
+            </div>
+            <div class="form-group">
+              <label>Price by km</label>
+              <input class="price-by-km" type="number" placeholder="Price by km"/>
+            </div>
+          </div>
         </div>
-      {{/actors}}
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.1/mustache.min.js"></script>
-    <script src="drivy.js"></script>
-    <script src="index.js"></script>
+        <div id="rental">
+          <label class="subtitle">Rental information</label>
+          <div class="centerBlock2">
+            <div class="form-group">
+              <label>Beginning</label>
+              <input class="begin" type="date" placeholder="Rental begin date"/>
+            </div>
+            <div class="form-group">
+              <label>Ending</label>
+              <input class="end" type="date" placeholder="Rental end date"/>
+            </div>
+            <div class="form-group">
+              <label>Distance</label>
+              <input class="distance" type="number" placeholder="Distance in km"/>
+            </div>
+            <div class="form-group">
+              <input class="option" type="checkbox" placeholder="Deductible option"/>
+              <label>Deductible option</label>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <button id="compute">Compute</button>
+        </div>
+      </div>
+      <div class="centerBlock3">
+        <label class="subtitle">Payment of actors</label>
+        <div class="centerBlock3-inside">
+          <div class="table-responsive">
+            <table class="table">
+              <tr>
+                <td>
+                  <div id="actors"></div>
+                  <script id="template" type="x-tmpl-mustache">
+                    {{#actors}}
+                      <div class="actor">
+                        <span class="col-xs-4 col-sm-4 col-md-4">{{who}}</span>
+                        <span class="col-xs-4 col-sm-4 col-md-4">{{type}}</span>
+                        <span class="col-xs-4 col-sm-4 col-md-4">{{amount}}</span>
+                      </div>
+                    {{/actors}}
+                  </script>
+                  <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.1/mustache.min.js"></script>
+                  <script src="drivy.js"></script>
+                  <script src="index.js"></script>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </center>
   </body>
 </html>
